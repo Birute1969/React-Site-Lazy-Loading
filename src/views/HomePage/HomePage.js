@@ -1,9 +1,12 @@
 import React from 'react';
+import { Wrapper, Title } from './HomePageStyled';
 
-const HomePage = () => {
+export const HomePage = () => {
   return (
-    <div>HomePage</div>
+    <Wrapper>
+        <Title>
+            Home page
+        </Title>
+    </Wrapper>
   )
 }
-
-export default HomePage

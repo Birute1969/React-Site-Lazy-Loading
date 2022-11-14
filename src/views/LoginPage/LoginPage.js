@@ -1,9 +1,18 @@
 import React from 'react';
+import { useNavigate } from "react-router";
 
-const LoginPage = () => {
-  return (
-    <div>LoginPage</div>
-  )
+export const LoginPage = ({ onLogin }) => {
+    const navigate = useNavigate();
+
+    const handleLogin = () => {
+        onLogin();
+        navigate('/');
+    };
+
+    return (
+        <div>
+            Login form
+            <button onClick={handleLogin}>Login</button>
+        </div>
+    );
 }
-
-export default LoginPage
