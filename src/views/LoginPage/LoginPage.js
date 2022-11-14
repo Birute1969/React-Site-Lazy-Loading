@@ -1,18 +1,29 @@
 import React from 'react';
-import { useNavigate } from "react-router";
+import { useState } from 'react';
+import { useNavigate } from 'react-router';
 
-export const LoginPage = ({ onLogin }) => {
+const LoginPage = ({ onLogin }) => {
+    const [username, setUsername] = useState('');
     const navigate = useNavigate();
 
-    const handleLogin = () => {
-        onLogin();
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        onLogin(username);
         navigate('/');
-    };
+    }
+    const handleUsernameChange= (e) => setUsername(e.target.value);
 
     return (
         <div>
-            Login form
-            <button onClick={handleLogin}>Login</button>
+            <h1>Login page</h1>
+            <form onSubmit={handleSubmit}>
+                <input placeholder="Username" onChange={handleUsernameChange}/>
+                <input type="password" placeholder="Password"/>
+                <button>Login</button>
+            </form>
+            
         </div>
     );
 }
+
+export default LoginPage

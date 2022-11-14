@@ -1,6 +1,6 @@
 import { Wrapper, Title } from './AboutPageStyled';
 
-export const AboutPage = () => {
+const AboutPage = () => {
 
         return (
         <Wrapper>
@@ -10,3 +10,5 @@ export const AboutPage = () => {
         </Wrapper>
     )
 }
+
+export default AboutPage;
