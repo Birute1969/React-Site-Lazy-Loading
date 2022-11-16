@@ -3,7 +3,7 @@ import { Navigation } from '../Navigation/Navigation';
 
 export const PageLayout = ({ user, onLogout }) => {
     if (!user) {
-        return <Navigate to="/login" />;
+        return <Navigate to="/register" />;
     }
     return (
         <div>

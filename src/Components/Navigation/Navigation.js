@@ -1,25 +1,39 @@
 import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import { NavContainer } from './NavigationStyled';
-
-
+import { 
+    NavContainer,
+    NavWrap,
+    Nav,
+    NavLink,
+    ButtonContainer, 
+    Button 
+} from './NavigationStyled';
 
 export const Navigation = ({ onLogout }) => {
     const navigate = useNavigate();
 
     const handleLogout = () => {
         onLogout();
-        navigate('/login');
+        navigate('/register');
     }
 
     return (
-        <NavContainer>
-             {/* {location.pathname !== '/' && <Link to="/">Home</Link>} */}
-            <Link to="/">Home</Link>
-            <Link to="/contacts">Contacts</Link>
-            <Link to="/about">About Page</Link>
-            <button onClick={handleLogout}>Logout</button>
-        </NavContainer>
-           
-    )
+            <NavContainer>
+                <NavWrap>
+                    
+                    <Nav>
+                        <NavLink to="/">Home</NavLink>
+                        <NavLink to="/contacts">Contacts</NavLink>
+                        <NavLink to="/about">About Page</NavLink>
+                    </Nav>
+                    
+                    <ButtonContainer>
+                        <Button onClick={handleLogout}>
+                            <span>Logout</span>
+                        </Button>
+                    </ButtonContainer>
+                    <NavLink to="/register">Register Page</NavLink>
+                    <NavLink to="/login">Login Page</NavLink>
+                </NavWrap>
+            </NavContainer>
+        )
 }
