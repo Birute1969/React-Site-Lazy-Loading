@@ -15,9 +15,14 @@ const RegisterPage = React.lazy(() => import('./views/RegisterPage/RegisterPage'
 function App() {
   const [user, setUser] = useState(null);
 
+  const handleRegister = (username) => {
+    setUser({username})
+  }
+
   const handleLogin = (username) => {
     setUser({username});
   }
+  
   const handleLogout = () => setUser(null);
     console.log(user);
 
@@ -45,7 +50,7 @@ function App() {
           
           <Route path="/register" element={
           <Suspense fallback={<div>Loading...</div>}>
-              <RegisterPage onRegister={handleLogin} />
+              <RegisterPage onRegister={handleRegister} />
           </Suspense>
           } />
           <Route path="/login" element={

@@ -8,11 +8,11 @@ import {
     Button 
 } from './NavigationStyled';
 
-export const Navigation = ({ onLogout }) => {
+export const Navigation = ({ onRegister }) => {
     const navigate = useNavigate();
 
     const handleLogout = () => {
-        onLogout();
+        onRegister();
         navigate('/register');
     }
 
