@@ -23,7 +23,9 @@ function App() {
     setUser({username});
   }
   
-  const handleLogout = () => setUser(null);
+  const handleLogout = () => {
+    setUser(null);
+  }
     console.log(user);
 
      return (
